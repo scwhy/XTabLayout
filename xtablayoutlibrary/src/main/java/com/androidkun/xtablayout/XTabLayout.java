@@ -553,6 +553,7 @@ public class XTabLayout extends HorizontalScrollView {
         }
         tab.mParent = this;
         tab.mView = createTabView(tab);
+        tab.mView.setMinimumWidth(tab.getTextWidth());
         return tab;
     }
 
@@ -1465,6 +1466,7 @@ public class XTabLayout extends HorizontalScrollView {
                 setBackgroundDrawable(
                         AppCompatDrawableManager.get().getDrawable(context, mTabBackgroundResId));
             }*/
+
             ViewCompat.setPaddingRelative(this, mTabPaddingStart, mTabPaddingTop,
                     mTabPaddingEnd, mTabPaddingBottom);
             setGravity(Gravity.CENTER);
